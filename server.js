@@ -15,7 +15,8 @@ app.use(bodyParser.json());
 app.use(express.static('./app/public'));
 
 // routes to be used by server
-require('./app/routing/htmlRoutes')(app);
+require('./app/routing/htmlRoutes')(app)
+
 require('./app/routing/apiRoutes')(app);
 
 // Starts the server to begin listening
