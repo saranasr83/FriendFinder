@@ -12,7 +12,7 @@ https://mysterious-plains-15821.herokuapp.com/
 
 ## Technologies used
 - Node.js
-- body-parager NPM Package - https://www.npmjs.com/package/inquirer
+- body-parser
 - express NPM Package - https://www.npmjs.com/package/express
 - path NPM Package - https://www.npmjs.com/package/path
 
