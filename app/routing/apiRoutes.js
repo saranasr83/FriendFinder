@@ -22,10 +22,15 @@ module.exports = function (app) {
         var friendToBeMatched = req.body; // form data from html 
         var bestScore = 1000;
         var newMatch;
+        var scoreArray= []
+        //math.abs
         // loop through all existing friends in friendData array
-        // var current friend (which is current frien in loop)
+        for (var i =0; i < friendData.length; i++) {
+            var scoreDiff = 0;
+        }
+        // var current friend (which is current friend in loop)
 
-        // loop through current friends score and do compararison of each number in score with friendToBeMatched score 
+        // loop through current friends score and do comparison of each number in score with friendToBeMatched score 
         // var totalDif;
         // check if the  total dif is less than bestScore if it is than make the current friend the newMatch
 
