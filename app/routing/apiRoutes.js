@@ -22,7 +22,7 @@ module.exports = function (app) {
         // all logic goes here
 
         // login payload to server console so we can see what is coming in.
-        console.log(req.body);
+        console.log("req.body:",req.body);
 
         // save the newest friend object to a variable 
         var friendToBeMatched = req.body; // inputs from form data from html 
@@ -30,7 +30,7 @@ module.exports = function (app) {
         // array of values from the quiz the user just submitted on the front end
         var newFriendsScores = req.body["scores"];
 
-        // set the lowestTotal toany high number that can  not be achieved through the quize total
+        // set the lowestTotal to any high number that can  not be achieved through the quize total
         // this is so that for the first comparison the first friend will alway be the match until all other friends are compared.
         var lowestTotal = 1000;
 
@@ -38,7 +38,7 @@ module.exports = function (app) {
         // existing friend only can be assigned to newMatch not the user that filled out the form last
         var newMatch;
 
-        // //math.abs
+        
         // loop through all existing friends in friendData array
         for (var i = 0; i < friendData.length; i++) {
             // in the loop the current friend in the array assign to a variable
@@ -64,16 +64,11 @@ module.exports = function (app) {
                 lowestTotal = scoreDiff;
             }
         }
-        // var current friend (which is current friend in loop)
-
-        // loop through current friends score and do comparison of each number in score with friendToBeMatched score 
-        // var totalDif;
-        // check if the  total dif is less than bestScore if it is than make the current friend the newMatch
         
         // once a match is made we can added the newFriend that just took the quiz to the friendsData array
         // we do this after so that the person will not match with themslef
         friendData.push(friendToBeMatched);
-        
+
         // send the new match to the front end to be dislayed to the user.
         res.json(newMatch);
     });

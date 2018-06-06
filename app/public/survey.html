@@ -241,7 +241,7 @@
             $.post("/api/friends", newfriend, function (data) {
                 // we get back a different friend from the server which is the best match for the newFriend
                 // data is the object with values of new matched friend
-                console.log(data);
+                console.log("show me the data:", data);
                 // add new match data to modal but first empty the modal of all existing content
                 $(".modal-body").empty();
                 // create content for modal
